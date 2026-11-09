@@ -5,6 +5,13 @@
 - Đề tài: Xây dựng công cụ phân đoạn tổn thương trên ảnh PET/CT.
 - Trạng thái: Bản nháp, đang bổ sung theo mẫu đề bài.
 
+- Thành viên (MSSV) và vai trò:
+  - 20224386 — Tìm kiếm bộ dữ liệu, xây dựng slide và chạy thử/kiểm tra code.
+  - 20224388 — Tìm kiếm bộ dữ liệu, xây dựng slide và chạy thử/kiểm tra code.
+  - 20233973 — Tìm kiếm bộ dữ liệu, xây dựng slide và chạy thử/kiểm tra code.
+
+- Nhóm phối hợp thực hiện các công việc trên và cùng rà soát kết quả.
+
 ## A. Literature Review và research gaps
 
 Đang bổ sung.
