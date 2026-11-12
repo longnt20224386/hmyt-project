@@ -36,7 +36,6 @@ The existing-mask comparison is exploratory and its provenance requires confirma
 Technical tests identified a label overflow and a global threshold-control issue.
 The current SUVpeak function returns SUVmax.
 
-The test script's paths must be updated for the src/results layout before rerunning it.
 
 ## Data
 Medical images are not included in this repository.
