@@ -69,9 +69,9 @@ The application is a semi-automatic threshold tool, not a trained neural network
 
 | Model | Evaluation set (split method, n) | Main metric (value, 95% CI if available) | Secondary metrics | Source of numbers (file / notebook / W&B) |
 |---|---|---|---|---|
-| Baseline 1 (Milestone 2): SUV >= 2.5 inside a prespecified ROI | Independent evaluation not completed; one case inspected technically; no patient split | Not available — baseline output has not been evaluated independently | Not available | [Source code](code/segmentation_14.py), lines 1345–1346; [test results](evidence/test_results.json) |
-| Proposed model (Milestone 3): two-stage threshold with 41% SUVmax and cap 7 | One real case loaded; synthetic functional tests performed; no independent clinical performance cohort | Not available — functional success is not Dice accuracy | Refine requires an ROI; one known-answer synthetic test passed | [Source code](code/segmentation_14.py), lines 1320–1427; [test harness](evidence/test_segmentation.py); [test results](evidence/test_results.json) |
-| Exploratory comparison of two existing masks, not attributable to either model above | One supplied study; existing candidate versus SEG; provenance and ROI scope unconfirmed | Dice 0.254209; no population CI from n=1 | IoU 0.145612; voxel recall 0.145612; voxel precision 1.000000 | [JSON](evidence/test_results.json), key `existing_mask_overlap_unverified_provenance` |
+| Baseline 1 (Milestone 2): SUV >= 2.5 inside a prespecified ROI | Independent evaluation not completed; one case inspected technically; no patient split | Not available — baseline output has not been evaluated independently | Not available | [Source code](../src/segmentation_14.py), lines 1345–1346; [test results](../results/test_results.json) |
+| Proposed model (Milestone 3): two-stage threshold with 41% SUVmax and cap 7 | One real case loaded; synthetic functional tests performed; no independent clinical performance cohort | Not available — functional success is not Dice accuracy | Refine requires an ROI; one known-answer synthetic test passed | [Source code](../src/segmentation_14.py), lines 1320–1427; [test harness](../src/test_segmentation.py); [test results](../results/test_results.json) |
+| Exploratory comparison of two existing masks, not attributable to either model above | One supplied study; existing candidate versus SEG; provenance and ROI scope unconfirmed | Dice 0.254209; no population CI from n=1 | IoU 0.145612; voxel recall 0.145612; voxel precision 1.000000 | [JSON](../results/test_results.json), key `existing_mask_overlap_unverified_provenance` |
 
 For the existing-mask comparison, every nonzero label was treated as foreground. Reference = 91,462 voxels; candidate = 13,318 voxels; intersection = 13,318 voxels. Thus Dice = 2×13,318/(91,462+13,318). Reference volume = 1,137.880622 mL; candidate volume = 165.689512 mL. Voxel-wise FP volume = 0 and voxel-wise FN volume = 972.191110 mL. These are geometric disagreement measurements, not diagnoses or proof that the application missed this volume. A limited-scope candidate and a whole-body reference would make the comparison unfair.
 
@@ -89,7 +89,7 @@ Technical findings from the actual source:
 |---|---|---|---|
 | Remove relative-threshold stage; retain SUV 2.5 baseline | Not available — planned independent experiment | Not available | Proposed protocol in B1; implementation lines 1345–1346 |
 | Remove absolute cap 7 from relative-threshold stage | Not available — planned independent experiment | Not available | Proposed change to lines 1379–1381; not yet executed |
-| Global UI control 10% versus 60%, synthetic ROI | Outputs identical | No change in this synthetic test | [Test results](evidence/test_results.json) |
+| Global UI control 10% versus 60%, synthetic ROI | Outputs identical | No change in this synthetic test | [Test results](../results/test_results.json) |
 
 The final row is a control-wiring test, not evidence of a clinically successful ablation. Patient-level ablation remains unfinished.
 
