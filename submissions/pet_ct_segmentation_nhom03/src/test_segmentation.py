@@ -3,9 +3,9 @@ from pathlib import Path
 os.environ['QT_QPA_PLATFORM']='offscreen'
 import numpy as np,SimpleITK as sitk
 from PyQt5.QtWidgets import QApplication,QMessageBox,QFileDialog
-src=Path(__file__).resolve().parents[1]/'code/segmentation_14.py'
+src = Path(__file__).resolve().parent / 'segmentation_14.py'
 p=Path(sys.argv[1])
-out=Path(__file__).resolve().parent; results={'source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'tests':[]}
+out=Path(__file__).resolve().parents[1]/'results'; results={'source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'tests':[]}
 spec=importlib.util.spec_from_file_location('tested_app',src); m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 app=QApplication.instance() or QApplication([])
 messages=[]
