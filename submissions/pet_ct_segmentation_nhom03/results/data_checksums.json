@@ -1,0 +1,27 @@
+[
+  {
+    "file": "CTres.nii.gz",
+    "bytes": 51828261,
+    "sha256": "810f33f19e50ba85d2ef0ec247780fda68465da49c2fd11dfcd3e54afdf9251b"
+  },
+  {
+    "file": "PET.nii.gz",
+    "bytes": 45635102,
+    "sha256": "fe9f58a52c2ae2b0fa015888e0b190bcb5b165ea3c17b004a6f576eb0b0a8072"
+  },
+  {
+    "file": "SUV.nii.gz",
+    "bytes": 45652273,
+    "sha256": "918937b0d5fe9421226c22254b1b5737d65a0f04d8fad62d32174e96e719821c"
+  },
+  {
+    "file": "SEG.nii.gz",
+    "bytes": 270239,
+    "sha256": "5789923e41f3e6bfc777d50c44b6b10a01b5d9aa495904e91d31ab9c74516032"
+  },
+  {
+    "file": "segment_Dung.nii",
+    "bytes": 52320352,
+    "sha256": "f805650d39e4e0e3e9f9aabe46e8d32b50e30533894ea91cef226b31d6c476e5"
+  }
+]

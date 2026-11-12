@@ -1,0 +1,81 @@
+{
+  "source_sha256": "3acf253adbad20cc8ec7bc33784a83a5c311e4e9ad76cfd38ba843cce70aa9e6",
+  "tests": [
+    {
+      "test": "GUI initialization offscreen",
+      "pass": true
+    },
+    {
+      "test": "Load supplied CT and PET",
+      "shape": [
+        327,
+        400,
+        400
+      ],
+      "pass": true
+    },
+    {
+      "test": "Refine without ROI",
+      "messages": [
+        {
+          "kind": "warning",
+          "text": "Chưa có mask nào được bôi để refine"
+        }
+      ]
+    },
+    {
+      "test": "Actual refine 27 voxels at 3 and center at 20",
+      "output_voxels": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "test": "Global threshold control 10 versus 60",
+      "identical_outputs": true
+    },
+    {
+      "test": "1000 disconnected components",
+      "messages": [
+        {
+          "kind": "critical",
+          "text": "Không thể refine mask 3D: Python integer 256 out of bounds for uint8"
+        }
+      ],
+      "refine_completed_without_error": false
+    }
+  ],
+  "pet_to_suv_ratio": {
+    "median": 2200.709228515625,
+    "min": 2200.708984375,
+    "max": 2200.70947265625
+  },
+  "geometry": {
+    "size": [
+      400,
+      400,
+      327
+    ],
+    "spacing_mm": [
+      2.0364201068878174,
+      2.0364201068878174,
+      3.0
+    ],
+    "pet_max": 97630.109375,
+    "suv_max": 44.36302185058594
+  },
+  "existing_mask_overlap_unverified_provenance": {
+    "reference": "SEG.nii.gz",
+    "candidate": "segment_Dung.nii",
+    "reference_voxels": 91462,
+    "candidate_voxels": 13318,
+    "intersection": 13318,
+    "dice": 0.25420881847680854,
+    "iou": 0.14561238547156197,
+    "voxel_recall": 0.14561238547156197,
+    "voxel_precision": 1.0,
+    "reference_ml": 1137.8806220207055,
+    "candidate_ml": 165.68951175429967,
+    "fp_ml": 0.0,
+    "fn_ml": 972.1911102664059
+  }
+}
